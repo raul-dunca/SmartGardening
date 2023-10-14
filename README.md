@@ -2,7 +2,7 @@
 
 ### Roles
 
-Raul Dunca - Fullstack developer, Team Manager<br />
+Raul Dunca - Fullstack developer/Team Manager<br />
 
 Doszlop Mark - Frontend developer/Social Media Guru<br />
 
