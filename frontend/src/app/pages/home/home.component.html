@@ -1,4 +1,6 @@
 <app-navbar></app-navbar>
-<div class="page-content">
+<div class="page-content" (customEvent)="cropSelected($event)">
+
+   <app-search-drawer></app-search-drawer>
    <app-map></app-map>
 </div>

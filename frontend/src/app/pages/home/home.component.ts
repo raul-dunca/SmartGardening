@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
+  onSearch(query: string) {
+    // Handle the search logic here
+    console.log('Search query:', query);
+  }
 
+  cropSelected(event: Event): void {
+    console.log(event);
+  }
 }

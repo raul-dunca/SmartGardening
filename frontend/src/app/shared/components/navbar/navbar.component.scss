@@ -1,5 +1,14 @@
+@import '../../../../styles.scss';
 .wrapper {
-   height: 4vh;
+   height: fit-content;
    width: 100%;
-   background-color: red;
+   position: absolute;
+      left: 0;
+      top: 0;
+      background-color: $dark-brown;
+   }
+   
+   .logo {
+      height: 60px;
+      padding: 5px 15px;
 }

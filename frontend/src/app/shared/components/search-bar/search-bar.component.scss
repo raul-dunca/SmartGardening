@@ -1,0 +1,83 @@
+// /* search-bar.component.css */
+@import '../../../../styles.scss';
+
+// .example-form-field {
+//    width: 100%;
+//    display: flex;
+//    align-items: center;
+
+//    /* Center vertically */
+//    border-radius: 30px !important;
+//    background-color: $background-color !important;
+//    border: 4px solid black;
+// }
+
+
+// ::ng-deep .mat-mdc-text-field-wrapper {
+//    border-radius: 30px !important;
+//    overflow: hidden !important;
+//    margin-bottom: -22px;
+// }
+
+// ::ng-deep .mat-mdc-text-field-wrapper input.mat-input-element {
+//    border-radius: 30px !important;
+//    background-color: red !important;
+//    color: white !important;
+//    /* Optional: Set text color to white for better visibility */
+// }
+
+// ::ng-deep .mat-mdc-text-field-wrapper button.mat-icon-button {
+//    border-radius: 30px !important;
+//    background-color: red !important;
+// }
+
+// .mat-form-field-appearance-outline .mat-form-field-outline {
+//    color: white;
+// }
+
+// /* Font color */
+// input.mat-input-element {
+//    color: white;
+// }
+
+@keyframes fadeInOut {
+   from {
+      opacity: 0;
+   }
+
+   to {
+      opacity: 1;
+   }
+}
+
+.search-box {
+   width: 100%;
+   display: flex;
+}
+
+.search-input {
+   width: 100%;
+   padding: 10px;
+   border: 3px solid $dark-brown;
+   border-radius: 20px;
+   outline: none;
+   font-size: 20px;
+   color: $dark-grey;
+   background: none;
+
+   // Apply fadeInOut animation
+   animation: fadeInOut 0.5s;
+}
+
+.search-button {
+   text-align: center;
+   height: 51px;
+
+   outline: none;
+   cursor: pointer;
+   border: 4px solid $dark-brown;
+   border-radius: 0 30px 30px 0;
+   border-left: none;
+   background: none;
+   font-size: 20px;
+}
