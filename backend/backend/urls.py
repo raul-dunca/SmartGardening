@@ -16,9 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from backend.Views import helloworld
+
+from backend import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', helloworld.hello_world, name='hello_world')
+    path('crops/', views.CropsList.as_view()),
+    #path('coords/',views.CoordsList.as_view()),
 ]
