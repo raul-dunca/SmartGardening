@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { GoogleMap } from '@angular/google-maps';
+import { LocationService } from 'src/app/services/location.service';
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
@@ -8,19 +9,8 @@ import { GoogleMap } from '@angular/google-maps';
 export class MapComponent implements OnInit {
   @ViewChild(GoogleMap, { static: false }) map?: GoogleMap;
   options!: any;
-  polygons: google.maps.LatLngLiteral[][] = [
-    [
-      { lat: 45.4268, lng: 23.1025 },
-      { lat: 44.4231, lng: 26.1063 },
-      { lat: 46, lng: 28 },
-    ],
-    [
-      { lat: 47.4268, lng: 27.1025 },
-      { lat: 44.4231, lng: 26.1063 },
-      { lat: 46, lng: 28 },
-    ]
-    // Add more polygons as needed
-  ];
+  polygons!: google.maps.LatLngLiteral[][]
+  constructor(private locationService:LocationService){}
 
   greenAreaOptions: google.maps.PolygonOptions = {
     fillColor: '#006000', // Set the fill color to green
@@ -31,6 +21,10 @@ export class MapComponent implements OnInit {
 
   ngOnInit(): void {
     this.initializeOptions();
+    this.locationService.selectedCrop$.subscribe((polygons: google.maps.LatLngLiteral[][]) => {
+      console.log('Selected Crop Area changed:', polygons);
+      this.polygons=polygons;
+    });
   }
 
   initializeOptions(): void {
@@ -83,8 +77,8 @@ export class MapComponent implements OnInit {
           "elementType": "geometry",
           "stylers": [
             { "visibility": "on" }, // Show administrative.country elements
-            { "fillColor": "#008000" }, // Set the fill color to green for Romania
-            { "strokeColor": "#40362F" }, // Set the border color to white
+            { "fillColor": "black" }, // Set the fill color to green for Romania
+            { "strokeColor": "black" }, // Set the border color to white
             { "weight": 1.5 } // Set the border weight
           ]
         }

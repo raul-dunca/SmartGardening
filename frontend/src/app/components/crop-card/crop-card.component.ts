@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { Crop } from 'src/app/models/crop.model';
 
 @Component({
   selector: 'app-crop-card',
@@ -6,11 +7,14 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrl: './crop-card.component.scss'
 })
 export class CropCardComponent {
-  selected: boolean = true;
-  crop:string='None';
-  @Output() cropSelected=new EventEmitter<string>();
+  selected: boolean = false;
+  crop !: Crop;
+  @Output() cropSelected = new EventEmitter<Crop | null>();
   onClick(): void {
     this.selected = !this.selected;
-    this.cropSelected.emit(this.crop);
+    if (this.selected === true)
+      this.cropSelected.emit(this.crop);
+    else
+      this.cropSelected.emit(null);
   }
 }

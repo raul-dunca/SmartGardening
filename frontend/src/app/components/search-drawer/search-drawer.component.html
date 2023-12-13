@@ -1,6 +1,8 @@
 <div class="wrapper">
    <app-search-bar class="bar" label="Search crops" (search)="onSearch($event)"></app-search-bar>
    <div class="box">
-      <app-crop-card></app-crop-card>
+      <div *ngFor="let crop of crops">
+         <app-crop-card [crop]="crop" (cropSelected)="onCropSelected($event)"></app-crop-card>
+      </div>
    </div>
 </div>

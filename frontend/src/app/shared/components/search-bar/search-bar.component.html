@@ -1,10 +1,12 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,900&display=swap" rel="stylesheet">
 <div class="container">
    <div class="search-box">
-      <input type="text" class="search-input" [(ngModel)]="searchQuery" placeholder="{{ placeholder }}" (input)="handleInputChange()"
-         (focus)="handleFocus()" (blur)="handleBlur()">
+      <input type="text" class="search-input" [(ngModel)]="searchQuery" placeholder="{{ placeholder }}"
+         (input)="handleInputChange()" (focus)="handleFocus()" (blur)="handleBlur()">
    </div>
 </div>
-
 <!-- <mat-form-field outline class="example-form-field" appearance="outline">
    <mat-label>{{label}}</mat-label>
    <input matInput [(ngModel)]="searchQuery" (input)="onSearchInput()" placeholder="Type to search" />
