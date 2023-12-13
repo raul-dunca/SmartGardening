@@ -7,8 +7,8 @@ import { Crop } from '../models/crop.model';
   providedIn: 'root'
 })
 export class CropService {
-  private apiUrl = 'your-dummy-api-url';
-  
+  private apiUrl = 'http://127.0.0.1:8000';
+
   constructor(private http: HttpClient) { }
 
   getAllCrops(): Observable<Crop[]> {

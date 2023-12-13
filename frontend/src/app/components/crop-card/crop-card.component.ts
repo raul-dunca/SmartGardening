@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Crop } from 'src/app/models/crop.model';
 
 @Component({
@@ -8,7 +8,7 @@ import { Crop } from 'src/app/models/crop.model';
 })
 export class CropCardComponent {
   selected: boolean = false;
-  crop !: Crop;
+  @Input() crop !: Crop;
   @Output() cropSelected = new EventEmitter<Crop | null>();
   onClick(): void {
     this.selected = !this.selected;

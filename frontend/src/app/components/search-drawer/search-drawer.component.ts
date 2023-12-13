@@ -12,6 +12,8 @@ export class SearchDrawerComponent implements OnInit{
 
   crops!:Crop[];
 
+  selectedCropNumbers:number=0;
+
   constructor(private cropService:CropService,private locationService:LocationService){}
 
   ngOnInit(): void {
@@ -24,6 +26,9 @@ export class SearchDrawerComponent implements OnInit{
   }
 
   onCropSelected(crop:Crop | null){
+    if(crop!=null){
+      this.selectedCropNumbers++;
+    }
     this.locationService.selectCrop(crop);
   }
 }

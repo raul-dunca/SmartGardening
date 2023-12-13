@@ -16,6 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchBarComponent } from './shared/components/search-bar/search-bar.component';
 import { FormsModule } from '@angular/forms';
 import { CropCardComponent } from './components/crop-card/crop-card.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { CropCardComponent } from './components/crop-card/crop-card.component';
     AppRoutingModule,
     GoogleMapsModule,
     FormsModule,
-    BrowserAnimationsModule, 
+    BrowserAnimationsModule,
+    HttpClientModule,
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule,
