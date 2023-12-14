@@ -3,7 +3,7 @@ from django.db import models
 
 
 class Crop(models.Model):
-    type=models.CharField(max_length=50)
+    type=models.CharField(max_length=50,unique=True)
     best_temperature=models.FloatField()
     best_soil_type=models.CharField(max_length=50)
     def __str__(self):
