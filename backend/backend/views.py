@@ -8,6 +8,7 @@ from backend.serializers import CropSerializer, CoordsSerializer, CropsSerialize
 # get all the crops
 # serialize them
 # return response
+#
 
 
 class CropsList(APIView):
