@@ -2,7 +2,7 @@ from django.http import Http404
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from backend.model import Crop, Coordinate
-from backend.serializers import CropSerializer, CoordsSerializer, CropsSerializerDetails
+from backend.serializers import CropSerializer, CoordsSerializer, CropsSerializerDetails, CropsSerializerImage
 
 
 # get all the crops
@@ -34,4 +34,17 @@ class CropsDetails(APIView):
     def get(self,request,id):
         crop=self.get_object(id)
         serializer = CropsSerializerDetails(crop)
+        return Response(serializer.data)
+
+
+class CropsImage(APIView):
+    def get_object(self,id):
+        try:
+         return Crop.objects.get(pk=id)
+        except Crop.DoesNotExist:
+            raise Http404
+
+    def get(self,request,id):
+        crop=self.get_object(id)
+        serializer = CropsSerializerImage(crop)
         return Response(serializer.data)

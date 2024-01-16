@@ -24,5 +24,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('crops/', views.CropsList.as_view()),
     path('crops/<int:id>',views.CropsDetails.as_view()),
+    path('crops/img/<int:id>',views.CropsImage.as_view()),
     #path('coords/',views.CoordsList.as_view()),
 ]
