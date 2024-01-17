@@ -15,4 +15,9 @@ export class CropService {
     return this.http.get<Crop[]>(`${this.apiUrl}/crops`);
   }
 
+  getCropData(cropId: number): Observable<any> {
+    console.log("rew sent")
+    return this.http.get<Crop[]>(`${this.apiUrl}/crops/img/${cropId}`);
+  }
+
 }

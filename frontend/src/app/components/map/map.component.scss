@@ -3,9 +3,38 @@
 .map {
    width: 40.08vw;
    height: 60.34vh;
-   margin-top: 10%;
-   // border: 3px solid $dark-brown;
+   border: 3px solid $dark-brown;
    box-shadow: rgba(149, 157, 165, 0.7) 0px 8px 24px;
    border-radius: 30px;
    overflow: hidden;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.map-img {
+   // margin-right: 10px;
+   object-fit: fill;
+   transform: scale(1.4);
+   margin-bottom: 40px;
+   filter: hue-rotate(-150deg) brightness(120%);
+}
+
+img {
+   transition: opacity 0.5s ease-in-out;
+}
+
+.fade-overlay {
+   position: absolute;
+   top: 20.3%;
+   right: 16.85%;
+   width: 40.08vw;
+   height: 60.34vh;
+   background-color: $background-color;
+   opacity: 1;
+   transition: opacity 2s ease-in-out;
+   pointer-events: none;
+   border: 3px solid $dark-brown;
+   box-shadow: rgba(149, 157, 165, 0.7) 0px 8px 24px;
+   border-radius: 30px; // Allow clicks to pass through the overlay
 }

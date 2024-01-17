@@ -8,16 +8,22 @@ import { LocationService } from 'src/app/services/location.service';
   templateUrl: './search-drawer.component.html',
   styleUrl: './search-drawer.component.scss'
 })
-export class SearchDrawerComponent implements OnInit{
+export class SearchDrawerComponent implements OnInit {
 
-  crops!:Crop[];
+  crops!: Crop[];
 
-  selectedCropNumbers:number=0;
+  selectedCropNumbers: number = 0;
 
-  constructor(private cropService:CropService,private locationService:LocationService){}
+  constructor(private cropService: CropService, private locationService: LocationService) { }
 
   ngOnInit(): void {
-    this.cropService.getAllCrops().subscribe(crops=>this.crops=crops);
+    this.cropService.getAllCrops().subscribe(crops => {
+      crops.forEach(crop => {
+        if (crop.id === 3) crop.isSelected = true;
+        else crop.isSelected = false
+      });
+      this.crops = crops;
+    });
   }
 
   onSearch(query: string) {
@@ -25,10 +31,21 @@ export class SearchDrawerComponent implements OnInit{
     console.log('Search query:', query);
   }
 
-  onCropSelected(crop:Crop | null){
-    if(crop!=null){
+  onCropSelected(crop: Crop | null) {
+    if (crop != null) {
+      this.deselectAllOtherCrops(crop);
+      console.log(this.crops);
       this.selectedCropNumbers++;
     }
+    console.log("crop " + crop)
     this.locationService.selectCrop(crop);
+  }
+
+  deselectAllOtherCrops(crop: Crop) {
+    this.crops.forEach(c => {
+      if (c.id != crop.id) {
+        c.isSelected = false;
+      }
+    })
   }
 }

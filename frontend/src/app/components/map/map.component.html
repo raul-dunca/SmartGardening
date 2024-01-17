@@ -1,6 +1,4 @@
-
 <div class="map">
-   <google-map [options]="options" height="100%" width="100%" >
-      <map-polygon *ngFor="let polygon of polygons" [paths]="polygon" [options]="greenAreaOptions"></map-polygon>
-   </google-map>
+   <img [src]="imageUrl" alt="Blob Image" class="map-img">
+   <!-- <div class="fade-overlay" *ngIf="showFadeOverlay"></div> -->
 </div>
