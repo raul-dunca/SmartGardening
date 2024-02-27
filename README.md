@@ -1,4 +1,4 @@
-# SmartGardening
+# 🌱 Greeny
 
 ### Roles
 
